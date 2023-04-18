@@ -1,4 +1,4 @@
-using Sirenix.OdinInspector;
+ï»¿using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace EGamePlay.Combat
 {
-    [CreateAssetMenu(fileName = "Execution", menuName = "¼¼ÄÜ|×´Ì¬/Execution")]
+    [CreateAssetMenu(fileName = "Execution", menuName = "æŠ€èƒ½|çŠ¶æ€/Execution")]
     public class ExecutionObject : ScriptableObject
     {
         [DelayedProperty]
@@ -22,13 +22,13 @@ namespace EGamePlay.Combat
         public GameObject ObjAsset;
         public ExecutionTargetInputType TargetInputType;
         [ShowIf("TargetInputType", ExecutionTargetInputType.Point)]
-        [LabelText("·¶Î§Ö¸Ê¾Æ÷")]
+        [LabelText("èŒƒå›´æŒ‡ç¤ºå™¨")]
         public GameObject RangeIndicatorObjAsset;
         [ShowIf("TargetInputType", ExecutionTargetInputType.Point)]
-        [LabelText("Ä¿±êµãÖ¸Ê¾Æ÷")]
+        [LabelText("ç›®æ ‡ç‚¹æŒ‡ç¤ºå™¨")]
         public GameObject PointIndicatorObjAsset;
         [ShowIf("TargetInputType", ExecutionTargetInputType.Point)]
-        [LabelText("³¯ÏòÖ¸Ê¾Æ÷")]
+        [LabelText("æœå‘æŒ‡ç¤ºå™¨")]
         public GameObject DirectionIndicatorObjAsset;
         //public string BindSkillName;
         //public SkillConfigObject BindSkill;
@@ -67,7 +67,7 @@ namespace EGamePlay.Combat
         }
 
         [OnInspectorGUI("BeginBox", append: false)]
-        [SerializeField, LabelText("×Ô¶¯ÖØÃüÃû")]
+        [SerializeField, LabelText("è‡ªåŠ¨é‡å‘½å")]
         public bool AutoRename { get { return StatusConfigObject.AutoRenameStatic; } set { StatusConfigObject.AutoRenameStatic = value; } }
 
         private void OnEnable()
@@ -91,7 +91,7 @@ namespace EGamePlay.Combat
             RenameFile();
         }
 
-        [Button("ÖØÃüÃûÅäÖÃÎÄ¼ş"), HideIf("AutoRename")]
+        [Button("é‡å‘½åé…ç½®æ–‡ä»¶"), HideIf("AutoRename")]
         private void RenameFile()
         {
             string[] guids = UnityEditor.Selection.assetGUIDs;

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -63,23 +63,23 @@ namespace EGamePlay
         ParticleEffect = 4,
     }
 
-    [LabelText("Ö´ĞĞÌåÄ¿±ê´«ÈëÀàĞÍ")]
+    [LabelText("æ‰§è¡Œä½“ç›®æ ‡ä¼ å…¥ç±»å‹")]
     public enum ExecutionTargetInputType
     {
         [LabelText("None")]
         None = 0,
-        [LabelText("´«ÈëÄ¿±êÊµÌå")]
+        [LabelText("ä¼ å…¥ç›®æ ‡å®ä½“")]
         Target = 1,
-        [LabelText("´«ÈëÄ¿±êµã")]
+        [LabelText("ä¼ å…¥ç›®æ ‡ç‚¹")]
         Point = 2,
     }
 
-    [LabelText("ÊÂ¼şÀàĞÍ")]
+    [LabelText("äº‹ä»¶ç±»å‹")]
     public enum FireEventType
     {
-        [LabelText("´¥·¢¸³¸øĞ§¹û")]
+        [LabelText("è§¦å‘èµ‹ç»™æ•ˆæœ")]
         AssignEffect = 0,
-        [LabelText("´¥·¢ĞÂÖ´ĞĞÌå")]
+        [LabelText("è§¦å‘æ–°æ‰§è¡Œä½“")]
         TriggerNewExecution = 1,
     }
 
@@ -90,25 +90,25 @@ namespace EGamePlay
         [ShowIf("ActionEventType", FireEventType.AssignEffect)]
         public EffectApplyType EffectApply;
         [ShowIf("ActionEventType", FireEventType.TriggerNewExecution)]
-        [LabelText("ĞÂÖ´ĞĞÌå")]
+        [LabelText("æ–°æ‰§è¡Œä½“")]
         public string NewExecution;
     }
 
-    //[LabelText("Ö´ĞĞÀàĞÍ")]
+    //[LabelText("ï¾–ï½´ï¾ï¾ï¾€çï¾")]
     //public enum ExecuteType
     //{
-    //    [LabelText("Å×³öÊÂ¼ş")]
+    //    [LabelText("ï¾…ï¾—ï½³î“±ï¾‚ï½¼ï£²")]
     //    FireOutEvent = 0,
-    //    [LabelText("³ÖĞøÖ´ĞĞ")]
+    //    [LabelText("ï½³ï¾–ï¾î™µï½´ï¾ï¾")]
     //    ContinuousExecute = 1,
     //}
 
-    [LabelText("Åö×²ÌåÖ´ĞĞÀàĞÍ")]
+    [LabelText("ç¢°æ’ä½“æ‰§è¡Œç±»å‹")]
     public enum CollisionExecuteType
     {
-        [LabelText("ÍÑÊÖÖ´ĞĞ")]
+        [LabelText("è„±æ‰‹æ‰§è¡Œ")]
         OutOfHand = 0,
-        [LabelText("Ö´ÊÖÖ´ĞĞ")]
+        [LabelText("æ‰§æ‰‹æ‰§è¡Œ")]
         InHand = 1,
     }
 
@@ -120,7 +120,7 @@ namespace EGamePlay
 
         [Space(10)]
         public CollisionShape Shape;
-        [ShowIf("Shape", CollisionShape.Sphere), LabelText("°ë¾¶")]
+        [ShowIf("Shape", CollisionShape.Sphere), LabelText("åŠå¾„")]
         public float Radius;
 
         [ShowIf("Shape", CollisionShape.Box)]
