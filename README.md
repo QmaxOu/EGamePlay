@@ -24,6 +24,13 @@
 - [9、如何实现一个灵活、通用的战斗（技能）系统——Entity-Component模式](https://zhuanlan.zhihu.com/p/343624199)
 ---
 
+## demo运行
+- rpg demo运行RpgExample Scene场景
+- 回合制demo运行TurnBaseExample Scene场景
+- 技能编辑器运行ExecutionLinkScene场景
+
+---
+
 ## 该项目使用了以下收费插件：
 - [DOTween Pro](https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416) （简单易用强大的动画插件）
 - [Odin Inspector](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041) （编辑器扩展、工作流改善）
@@ -110,7 +117,8 @@ ExecutionLink
 
 ---
 ## 技能ScriptableObject配置和Excel配置流程切换命令
-<img src="Readme/Tools_Excel.png" width="60%">
+之前的命令新版unity用不了了，需要手动到PlayerSettings面板添加 EGAMEPLAY_EXCEL 条件编译
+<img src="Readme/Define_Excel.png" width="">
 
 ### 技能Excel配置
 ![SkillConfigImage.png](Readme/SkillExcel.png)
@@ -137,5 +145,5 @@ ExecutionLink
 技能描述文件如下 skill(1000) //技能1 { FaceToTarget(0) PlayAnimation(1,Skill_1) Bullet(1.3,Bullet,7) PlayEffect(0,Explode8,3) })
 
 ---
-## 参考引用
+## 参考
 - https://github.com/egametang/ET

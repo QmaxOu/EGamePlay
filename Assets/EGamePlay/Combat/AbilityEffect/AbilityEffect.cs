@@ -50,9 +50,7 @@ namespace EGamePlay.Combat
             var triggable = !(this.EffectConfig is ActionControlEffect) && !(this.EffectConfig is AttributeModifyEffect);
             if (triggable)
             {
-                /// 立即触发
-                if (EffectConfig.EffectTriggerType == EffectTriggerType.Instant) TriggerEffectToParent();
-                else TriggerEventBind = AddChild<EffectTriggerEventBind>();
+                TriggerEventBind = AddChild<EffectTriggerEventBind>();
             }
         }
 
@@ -91,19 +89,6 @@ namespace EGamePlay.Combat
                 action.AbilityEffect = this;
             }
             return action;
-        }
-
-        /// <summary>   尝试将效果赋给父对象   </summary>
-        public void TriggerEffectToParent()
-        {
-            TriggerEffect((OwnerAbility as IAbilityEntity).ParentEntity);
-        }
-
-        /// <summary>   尝试将效果应用给目标实体   </summary>
-        public void TriggerEffect(Entity targetEntity)
-        {
-            var effectAssign = CreateAssignAction(targetEntity);
-            effectAssign.AssignEffect();
         }
     }
 }
